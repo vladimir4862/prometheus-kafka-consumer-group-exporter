@@ -98,9 +98,6 @@ func parseLong(value string) (int64, error) {
 
 func parsePartitionInfo(line string) (*exporter.PartitionInfo, error) {
 	fields := consumerGroupCommandDescribeOutputSeparatorRegexp.Split(line, -1)
-	if len(fields) != 7 {
-		return nil, fmt.Errorf("malformed line: %s", line)
-	}
 
 	var err error
 
